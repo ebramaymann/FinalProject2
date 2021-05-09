@@ -1,0 +1,280 @@
+﻿@using System.Net.Http
+@using WebApplication1.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{ 
+    int count = 0;
+    List<Good> Products = HttpContextAccessor.HttpContext.Session.Get<List<Good>>("products");
+    if(Products==null)
+    {
+        Products = new List<Good>();
+    }
+    count = Products.Count();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.7.2/css/all.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/css/style.css" />*@
+    <link rel="stylesheet" href="~/css/style1.css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    @* ---------- Search => website : https://datatables.net/ ---------------- *@
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    @* ---------- Reports => website : https://datatables.net/ ---------------- *@
+    <link href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/6128d2f3dd.js" crossorigin="anonymous"></script>
+
+
+    @*<link rel="stylesheet" href="~/css/styleHome.css" />*@
+</head>
+<body>
+    <header>
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Goods" asp-action="Index">WebApplication1</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin_Goods" asp-action="Index">Admin Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ShowAllProducts" asp-action="Index">Goods</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ShowAllProducts" asp-action="Cart">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    (@count)
+                                </a>
+                            </li>
+
+                        </ul>
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </nav>*@
+        <nav>
+            <div style="background-color: #21d192;">
+                <div class="container">
+
+                    <div class="text-dark" id="fheader" style="text-align: center;">
+                        الموقع الأول في محافظة المنيا للسباكة والأدوات الصحية
+                    </div>
+                </div>
+
+            </div>
+
+
+        </nav>
+        <main>
+            <div class="d-flex justify-content-center" style="margin: 25px;">
+                <div class="d-inline mr-5">
+                   
+                    <partial name="_LoginPartial" />
+
+                </div>
+
+                <div class="input-group" style="width: 500px;">
+                    <button type="button" class="d-inline btn btn-outline-success">البحث</button>
+                    <input type="search" class="form-control rounded" aria-label="Search"
+                           aria-describedby="search-addon" style="text-align: right;" />
+                </div>
+
+
+                <div><a style="text-decoration:none;" asp-area="" asp-controller="Admin_Goods" asp-action="Index"><h3 style=" margin-left: 190px;font-family: 'Almarai', sans-serif;">المزاحم</h3></a></div>
+            </div>
+            <!-- Navbar -->
+            <nav style="background-color: rgb(236, 234, 234);">
+                <div class="d-flex justify-content-center">
+                    @* ============== card ============= *@
+                    <a class="text-dark dropdown float-left" asp-area="" asp-controller="ShowAllProducts" asp-action="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        (@count)
+                    </a>
+                    @* ============== chat ============= *@
+
+                    <a class="text-dark dropdown float-left" asp-area="" asp-controller="Chat" asp-action="Index">
+                        <i class='far fa-comment-dots' style='font-size:24px'></i>
+                    </a>
+
+
+
+                    <div class="dropdown d-inline ">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">سباكة</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">مواسير</a>
+                            <a href="#" class="dropdown-item">مواسير صرف صحي </a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">اكسسوارات</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">حنفيات</a>
+                            <a href="#" class="dropdown-item"> محابس</a>
+                            <a href="#" class="dropdown-item"> وصلات</a>
+                            <a href="#" class="dropdown-item"> أنظمة حريق</a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">خلاطات مياه</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">خلاط حوض</a>
+                            <a href="#" class="dropdown-item"> خلاط حوض عالي</a>
+                            <a href="#" class="dropdown-item"> خلاط بانيو </a>
+                            <a href="#" class="dropdown-item"> خلاط مطبخ حائط </a>
+                            <a href="#" class="dropdown-item"> خلاط مضبخ حوض </a>
+                            <a href="#" class="dropdown-item"> خلاط شطافة  </a>
+                            <a href="#" class="dropdown-item"> أطقم خلاطات 3 قطع </a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> مراحيض و أحواض</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">مراحيض</a>
+                            <a href="#" class="dropdown-item"> مراحيض معلقة</a>
+                            <a href="#" class="dropdown-item"> أحواض </a>
+                            <a href="#" class="dropdown-item"> أحواض ديكور فوق الرخامة </a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> أحواض ستانلس  </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">أحواض فرانكي</a>
+                            <a href="#" class="dropdown-item"> أحواض ستانلس تركي</a>
+                            <a href="#" class="dropdown-item"> أحواض ستانلس كورينا كوري</a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> بانيوهات   </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">بانيو جاكوزي </a>
+                            <a href="#" class="dropdown-item">بانيو دائري وبيضاوي </a>
+                            <a href="#" class="dropdown-item"> بانيو قدم  </a>
+                            <a href="#" class="dropdown-item"> بانيو مستطيل   </a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline">
+                        <a asp-area="" asp-controller="ShowAllProducts" asp-action="Index" class="text-dark">كل الأصناف</a>
+                    </div>
+
+                </div>
+
+            </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <div class="container-fluid">
+        <footer  class=" page-footer font-small bg-light lighten-5">
+            <div style="background-color: #21d192;">
+                <div class="container">
+                    <div class="row py-4 d-flex align-items-center">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center text-md-left mt-5">
+                <div class="row mt-3 dark-grey-text">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                        <img src="~/Image/mazahem.png" width="300px">
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase font-weight-bold align-self-center">لينكات</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a  id="links" asp-area="" asp-controller="UserHome" asp-action="UserHome" class="dark-grey-text" > الصفحة الرئيسية </a>
+                        </p>
+                        <p>
+                            <a  id="links" asp-area="" asp-controller="ShowAllProducts" asp-action="Index" class="dark-grey-text" >  كل الأصناف</a>
+                        </p>
+                        <p>
+                            <a id="links" class="dark-grey-text" >الشكاوى والاقتراحات </a>
+                        </p>
+                        <p>
+                            <a id="links" class="dark-grey-text" >لينك 4</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 id="conthead" class="text-uppercase font-weight-bold">اتصل بنا</h6>
+                        <p id="contfoot">
+                            المنيا, مصر   <i class="fas fa-home mr-3"></i>
+                        </p>
+                        <p id="contfoot">
+                             mazahe@gmail.com
+                        </p>
+                        <p id="contfoot">
+                            01015152436   <i class="fas fa-phone mr-3"></i>
+                        </p>
+                        <p id="contfoot">
+                            01133622154   <i class="fas fa-phone mr-3"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center text-black-50 py-3">
+                © 2020 Copyright:
+                <p class="dark-grey-text" href="https://mdbootstrap.com/"> El-Mazahem</p>
+            </div>
+
+        </footer>
+        </div>
+        @*<footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2021 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        @* ---------- Search => website : https://datatables.net/ ---------------- *@
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+        @* ---------- Reports => website : https://datatables.net/ ---------------- *@
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
+        @* ============= *@
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/minicart.js" asp-append-version="true"></script>
+        <script src="~/js/JS.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
