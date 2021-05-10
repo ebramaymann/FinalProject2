@@ -8,6 +8,7 @@
     .chat {
         margin-top: auto;
         margin-bottom: auto;
+        padding:20px;
     }
 
 
@@ -15,7 +16,7 @@
     .card {
         height: 500px;
         border-radius: 15px !important;
-        background-color: rgba(0,0,0,0.4) !important;
+        background-color: ghostwhite !important;
     }
 
     .contacts_body {
@@ -156,10 +157,11 @@
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 15px;
+  
     }
 
         .user_info span {
-            font-size: 20px;
+            font-size: 15px;
             color: white;
         }
 
@@ -265,13 +267,13 @@
                 }
 
     .justify-content-end {
-        background-color: #e09b1ecc;
+        background-color: #21d192;
         color: white;
         border-radius: 28px;
     }
 
     .justify-content-start {
-        background-color: #ff005e6b;
+        background-color: lightgreen;
         color: white;
         border-radius: 28px;
     }
@@ -341,7 +343,7 @@
 <script>
     const connection = new signalR.HubConnectionBuilder()
         .configureLogging(signalR.LogLevel.Debug)
-        .withUrl("https://localhost:44391/Index")
+        .withUrl("https://localhost:5001/Index")
         .configureLogging(signalR.LogLevel.Information)
         .build();
     connection.start().then(() => {

@@ -50,11 +50,12 @@ namespace WebApplication1
                 .AddDefaultUI();
 
             services.AddAuthentication()
-                .AddGoogle(options => {
+                .AddGoogle(options =>
+                {
                     options.ClientId = Configuration["App:GoogleClientId"];
                     options.ClientSecret = Configuration["App:GoogleClientSecret"];
                 });
-            
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

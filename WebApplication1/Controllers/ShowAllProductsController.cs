@@ -40,6 +40,19 @@ namespace WebApplication1.Controllers
             }
             return View(products);
         }
+        //============= for Search header --------------
+        [HttpPost]
+        public IActionResult search_header(string str)
+        {
+            //ViewData["Idoffers"] = new SelectList(_context.Offers, "Id", "Id");
+            var products = _context.Good.Where(c => c.Name == str).ToList();
+            if (str == null )
+            {
+                if(products == null)
+                products = _context.Good.ToList();
+            }
+            return View(products);
+        }
 
         //=================== Details
         //[HttpGet]

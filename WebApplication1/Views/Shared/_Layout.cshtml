@@ -100,12 +100,14 @@
                     <partial name="_LoginPartial" />
 
                 </div>
-
-                <div class="input-group" style="width: 500px;">
-                    <button type="button" class="d-inline btn btn-outline-success">البحث</button>
-                    <input type="search" class="form-control rounded" aria-label="Search"
-                           aria-describedby="search-addon" style="text-align: right;" />
-                </div>
+                <form asp-action="search_header" asp-controller="ShowAllProducts" method="post"  >
+                    <div class="input-group" style="width: 500px;">
+                        <button type="submit" class="d-inline btn btn-outline-success">البحث</button>
+                        <input autocomplete="on" type="search" class="form-control rounded" aria-label="Search"
+                               aria-describedby="search-addon" style="text-align: right;" />
+                    </div>
+                </form>
+                
 
 
                 <div><a style="text-decoration:none;" asp-area="" asp-controller="Admin_Goods" asp-action="Index"><h3 style=" margin-left: 190px;font-family: 'Almarai', sans-serif;">المزاحم</h3></a></div>
@@ -127,57 +129,57 @@
 
 
                     <div class="dropdown d-inline ">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">سباكة</a>
+                        <a asp-area="" asp-controller="cat" asp-action="sebaka" class="dropdown-toggle text-dark" data-toggle="dropdown">سباكة</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">مواسير</a>
-                            <a href="#" class="dropdown-item">مواسير صرف صحي </a>
+                            <a asp-area="" asp-controller="catg" asp-action="sebaka" class="dropdown-item">مواسير صرف صحي </a>
+                            <a asp-area="" asp-controller="catg" asp-action="sebaka" class="dropdown-item">مواسير</a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">اكسسوارات</a>
+                        <a asp-area="" asp-controller="catg" asp-action="acc" class="dropdown-toggle text-dark" data-toggle="dropdown">اكسسوارات</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">حنفيات</a>
-                            <a href="#" class="dropdown-item"> محابس</a>
-                            <a href="#" class="dropdown-item"> وصلات</a>
-                            <a href="#" class="dropdown-item"> أنظمة حريق</a>
+                            <a asp-area="" asp-controller="catg" asp-action="acc" class="dropdown-item">حنفيات</a>
+                            <a asp-area="" asp-controller="catg" asp-action="acc" class="dropdown-item"> محابس</a>
+                            <a asp-area="" asp-controller="catg" asp-action="acc" class="dropdown-item"> وصلات</a>
+                            <a asp-area="" asp-controller="catg" asp-action="acc" class="dropdown-item"> أنظمة حريق</a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">خلاطات مياه</a>
+                        <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-toggle text-dark" data-toggle="dropdown">خلاطات مياه</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">خلاط حوض</a>
-                            <a href="#" class="dropdown-item"> خلاط حوض عالي</a>
-                            <a href="#" class="dropdown-item"> خلاط بانيو </a>
-                            <a href="#" class="dropdown-item"> خلاط مطبخ حائط </a>
-                            <a href="#" class="dropdown-item"> خلاط مضبخ حوض </a>
-                            <a href="#" class="dropdown-item"> خلاط شطافة  </a>
-                            <a href="#" class="dropdown-item"> أطقم خلاطات 3 قطع </a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item">خلاط حوض</a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> خلاط حوض عالي</a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> خلاط بانيو </a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> خلاط مطبخ حائط </a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> خلاط مضبخ حوض </a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> خلاط شطافة  </a>
+                            <a asp-area="" asp-controller="catg" asp-action="khalat" class="dropdown-item"> أطقم خلاطات 3 قطع </a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> مراحيض و أحواض</a>
+                        <a asp-area="" asp-controller="catg" asp-action="marahid" class="dropdown-toggle text-dark" data-toggle="dropdown"> مراحيض و أحواض</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">مراحيض</a>
-                            <a href="#" class="dropdown-item"> مراحيض معلقة</a>
-                            <a href="#" class="dropdown-item"> أحواض </a>
-                            <a href="#" class="dropdown-item"> أحواض ديكور فوق الرخامة </a>
+                            <a asp-area="" asp-controller="catg" asp-action="marahid" class="dropdown-item">مراحيض</a>
+                            <a asp-area="" asp-controller="catg" asp-action="marahid" class="dropdown-item"> مراحيض معلقة</a>
+                            <a asp-area="" asp-controller="catg" asp-action="marahid" class="dropdown-item"> أحواض </a>
+                            <a asp-area="" asp-controller="catg" asp-action="marahid" class="dropdown-item"> أحواض ديكور فوق الرخامة </a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> أحواض ستانلس  </a>
+                        <a asp-area="" asp-controller="catg" asp-action="ahwad" class="dropdown-toggle text-dark" data-toggle="dropdown"> أحواض ستانلس  </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">أحواض فرانكي</a>
-                            <a href="#" class="dropdown-item"> أحواض ستانلس تركي</a>
-                            <a href="#" class="dropdown-item"> أحواض ستانلس كورينا كوري</a>
+                            <a asp-area="" asp-controller="catg" asp-action="ahwad" class="dropdown-item">أحواض فرانكي</a>
+                            <a asp-area="" asp-controller="catg" asp-action="ahwad" class="dropdown-item"> أحواض ستانلس تركي</a>
+                            <a asp-area="" asp-controller="catg" asp-action="ahwad" class="dropdown-item"> أحواض ستانلس كورينا كوري</a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
-                        <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> بانيوهات   </a>
+                        <a asp-area="" asp-controller="catg" asp-action="banio" class="dropdown-toggle text-dark" data-toggle="dropdown"> بانيوهات   </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">بانيو جاكوزي </a>
-                            <a href="#" class="dropdown-item">بانيو دائري وبيضاوي </a>
-                            <a href="#" class="dropdown-item"> بانيو قدم  </a>
-                            <a href="#" class="dropdown-item"> بانيو مستطيل   </a>
+                            <a asp-area="" asp-controller="catg" asp-action="banio" class="dropdown-item">بانيو جاكوزي </a>
+                            <a asp-area="" asp-controller="catg" asp-action="banio" class="dropdown-item">بانيو دائري وبيضاوي </a>
+                            <a asp-area="" asp-controller="catg" asp-action="banio" class="dropdown-item"> بانيو قدم  </a>
+                            <a asp-area="" asp-controller="catg" asp-action="banio" class="dropdown-item"> بانيو مستطيل   </a>
                         </div>
                     </div>
                     <div class="dropdown d-inline">
