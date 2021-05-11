@@ -1,1 +1,378 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
+
+@model IEnumerable<WebApplication1.Models.Good>
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/0000000000.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!--<nav>
+        <div style="background-color: #21d192;">
+            <div class="container">
+                <div>
+                    <div id="fheader" style="text-align: center;">الموقع الأول في محافظة المنيا للسباكة والأدوات الصحية</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="d-flex justify-content-center" style="margin: 25px;">
+            <button class="btn bg-light" style="margin-right: 90px;">تسجيل الدخول</button>
+            <div class="input-group" style="width: 500px;">
+                <button type="button" class="btn btn-outline-success">البحث</button>
+                <input type="search" class="form-control rounded" aria-label="Search"
+                       aria-describedby="search-addon" style="text-align: right;" />
+            </div>
+            <div><h3 style="margin-left: 190px;">المزاحم</h3></div>
+        </div>-->
+    <!-- Navbar -->
+    <!--<nav style="background-color: rgb(236, 234, 234);">
+        <div class="d-flex justify-content-center">
+            <div class="dropdown d-inline ">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">سباكة</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">مواسير</a>
+                    <a href="#" class="dropdown-item">مواسير صرف صحي </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">اكسسوارات</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">صبانات</a>
+                    <a href="#" class="dropdown-item"> ضاغط صابون </a>
+                    <a href="#" class="dropdown-item"> طقم اكسسوارات</a>
+                    <a href="#" class="dropdown-item"> فواطات </a>
+                    <a href="#" class="dropdown-item"> وراقة </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown">خلاطات مياه</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">خلاط حوض</a>
+                    <a href="#" class="dropdown-item"> خلاط حوض عالي</a>
+                    <a href="#" class="dropdown-item"> خلاط بانيو </a>
+                    <a href="#" class="dropdown-item"> خلاط مطبخ حائط </a>
+                    <a href="#" class="dropdown-item"> خلاط مضبخ حوض </a>
+                    <a href="#" class="dropdown-item"> خلاط شطافة  </a>
+                    <a href="#" class="dropdown-item"> أطقم خلاطات 3 قطع </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> مراحيض و أحواض</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">مراحيض</a>
+                    <a href="#" class="dropdown-item"> مراحيض معلقة</a>
+                    <a href="#" class="dropdown-item"> أحواض معلقة</a>
+                    <a href="#" class="dropdown-item"> أطقم حمامات </a>
+                    <a href="#" class="dropdown-item"> أحواض </a>
+                    <a href="#" class="dropdown-item"> أحواض ديكور فوق الرخامة </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> أحواض ستانلس  </a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">أحواض فرانكي</a>
+                    <a href="#" class="dropdown-item">أحواض بلازا</a>
+                    <a href="#" class="dropdown-item"> أحواض ستانلس تركي</a>
+                    <a href="#" class="dropdown-item"> أحواض ستانلس كورينا كوري</a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"> بانيوهات   </a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">بانيو جاكوزي </a>
+                    <a href="#" class="dropdown-item">بانيو دائري وبيضاوي </a>
+                    <a href="#" class="dropdown-item"> بانيو قدم  </a>
+                    <a href="#" class="dropdown-item"> بانيو مستطيل   </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline">
+                <a class="text-dark">كل الأصناف</a>
+            </div>
+        </div>
+
+    </nav>-->
+    <!-- Navbar --><br /> <br /><br />
+    <h2 class="title">أحدث الاضافات  </h2>
+    <div class="container">
+        <section class="text-center mb-4">
+            <div class="row wow fadeIn">
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">بانيو-سبيس-180-×-80-سم-بكرسى</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/بانيو-سبيس-180-×-80-سم-بكرسى-بدون-الجوانب-والشاسيه-من-ايديال-ستاندرد20214923.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 1100 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/113"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">بانيو-جاكوزى-برشلونة</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/بانيو-جاكوزى-برشلونة-170-×-80-سم-نظام-1-موتور-8-جيت-مياه-كروم-بالطابق-والفايظ-والجوانب-والشاسيه-من-الطيب20212259.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 16546 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/98"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">حله-حوض-مطبخ-استانلس-تركي-لازورد</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/حله-حوض-مطبخ-استانلس-تركي-لازورد-مقاس-48-×-38-سم-سمك-100-مم-بالصرف-من-بلازا20210518.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 337 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/68"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeIn">
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">خلاط-بانيو-سليم-لاين-بي</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/خلاط-بانيو-سليم-لاين-بي-8587-ايديال-ستاندرد20211153.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 853 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/171"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">خلاط-مطبخ-نيو-كونشيتو</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/خلاط-مطبخ-نيو-كونشيتو-32667001-جروهي20213044.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 1404 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/193"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">خلاط-مطبخ-حائطى-يد-واحدة</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/خلاط-مطبخ-حائطى-يد-واحدة-بقنطرة-سفلية-من-جوى20212821.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 309 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/190"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <h2 class="title">المنتجات المقترحة </h2>
+    <div class="container">
+        <section class="text-center mb-4">
+            <div class="row wow fadeIn">
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">وراقة-استانلس-ستيل-بغطاء-كروم</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/وراقة-استانلس-ستيل-بغطاء-كروم-gmj-2651a-من-موك20213801.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 185 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/230"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">خلاط-حوض-ايديال-ستريم</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/خلاط-حوض-ايديال-ستريم-بقنطرة-عالية-متحركة-b1263aa-من-ايديال-ستاندرد20213242.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 983 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/194"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">ضاغط-صابون-بالكوع-500-ملى</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/ضاغط-صابون-بالكوع-500-ملى-s5m-مستورد-صنع-في-تركيا-من-فيالى20211910.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 104 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/214"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeIn">
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">طقم-حمام-رافال</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/طقم-حمام-رافال-مرحاض-و-حوض-بالعامود-الطويل-70-سم-كامل-من-ميكافيت20215308.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 1284 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/147"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">خلاط-مطبخ-حائطى-نحاس-مصرى</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/خلاط-مطبخ-حائطى-نحاس-مصرى-من-مورافيا20211112.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 239 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/189"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" style="margin-bottom:15px;">
+                    <div class="card md-4">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                <label style="font-size:23px;color:steelblue">حوض-هابى-دى</label>
+                            </h4>
+                        </div>
+                        <img src="~/Image/حوض-هابى-دى-75-سم-بالعامود-الطويل-من-ديورافيت20213825.jpg" asp-append-version="true" alt="Card image" class="card-img-top" style="height:300px" />
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <label style="font-size:20px;color:#a51313"><b>Price : 1057 </b></label>
+                                </div>
+                                <a href="https://localhost:5001/ShowAllProducts/Detail/136"
+                                   class="btn pull-right btn-outline-success">View Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    @*</main>*@
+
+    <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

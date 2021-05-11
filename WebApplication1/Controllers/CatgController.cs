@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
         {
             var query = from k in _context.Good
                         join a in _context.typeGoods on k.Idtg equals a.Id
-                        where k.Idtg == 6 // replace with your varialble.orderby a.City
+                        where k.Idtg == 5 // replace with your varialble.orderby a.City
                         select k;
             return View(query);
         }

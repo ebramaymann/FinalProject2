@@ -11,16 +11,16 @@
             <div class="row">
                 <div class="col-sm-6 ">
 
-                    <h2 > <i class="fas fa-comment-dollar text-success"></i> Mange <b>Products</b></h2>
+                    <h2 > <i class="fas fa-comment-dollar text-success"></i> ادارة <b>المنتجات</b></h2>
                 </div>
                 <div class="col-sm-6 ">
                     <p class="btn-group">
-                        <a asp-action="Create" data-toggle="model" class="btn btn-success text-white"><i class="fas fa-random"></i> Add New product</a>
+                        <a asp-action="Create" data-toggle="model" class="btn btn-success text-white"><i class="fas fa-random"></i> اضافة منتج جديد   </a>
                     </p>
                 </div>
             </div>
         </div>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" id="myTable">
             <thead>
                 <tr>
                     <th>
@@ -91,3 +91,18 @@
     </div>
 
 </div>
+@section scripts{
+    <script type="text/javascript">
+                // ------ for search
+                $(document).ready(function () {
+                    $('#myTable').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                });
+
+                     
+    </script>
+}

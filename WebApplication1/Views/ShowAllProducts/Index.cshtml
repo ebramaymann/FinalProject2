@@ -1,16 +1,21 @@
 ﻿@model IEnumerable<WebApplication1.Models.Good>
 
 
-
+<br /><br />
 @*------------------- This Form For Search ------ *@
 <form class="p-3 d-flex justify-content-center" method="post">
     <div class="row">
-        <div class="col-4">
-            <input type="number" placeholder="Enter Min. Price" class="form-control" name="lowAmount" />
+
+        <div class="col-4" style=" margin-right: 0;padding-right: 0px;">
+            <input type="number" placeholder="ادخل أعلى سعر" class="form-control" name="largeAmount" />
         </div>
-        <div class="col-4">
-            <input type="number" placeholder="Enter Max. Price" class="form-control" name="largeAmount" />
+        <div class="col-4" style=" padding-left: 8px;">
+            <input type="number" placeholder="ادخل أقل سعر" class="form-control" name="lowAmount" />
         </div>
+        <div class="col-3">
+            <input type="submit" value="ابحث" class="btn btn-success" name="lowAmount" />
+        </div>
+
         @*<div class="col-3">
            <select class="form-control" name="TypeGoodsel" >
                 <option >Pipe</option>
@@ -18,10 +23,8 @@
                 <option>Facts</option>
             </select>
         </div>*@
-        <div class="col-3">
-            <input type="submit" value="Search" class="btn btn-success" name="lowAmount" />
-        </div>
-        <div class="col-3"></div>
+
+
     </div>
 </form>
 @* =========================================================== *@
